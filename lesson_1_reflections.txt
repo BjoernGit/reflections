@@ -1,0 +1,28 @@
+ich behalte nicht nur den überblick wenn sich versionen ändern und ich fehler im code mache, sondern kann auch ohne bedenken grössere änderungen vor nehmen ohne das ich immer alles auskommentieren muss.
+
+dropbox macht 30 tage lang verisonen. Google docs macht eine historie von anllen änderungen die zugänglich sind.
+
+ein git commit ist eine änderung und eine version hochladen die in sich logisch geschlossen ist
+commits sollten kurz genug sein damit sie zu verstehen sind in sich aber lang genug das nicht anfürsich zusammengehörende bugfixes oder changes auf mehrere commits verteilt werden
+
+git efficience:
+strg + U clear line
+insert fügt ein
+markieren von zeilen gleicht strg + C
+
+cd /c/ wechselt zu C:
+pwd zeigt den momentanen pfad
+
+git clone <URL> zum downloaden in das momentane directory
+
+mit "git log" kann ich mir alle commits von meinem git project ansehen und deren id speichern mit einer markierung
+
+mit "git diff <OLD> <NEW>" kann ich mir die änderungen zwischen den verionen ansehen
+
+mit git checkout <ID> kann ein commit mit der richtigen ID geladen werden
+
+back to text again:
+durch das nutzen von git (wie bereits sehr weit oben beschrieben) bin ich eher bereit eine änderung zu machen weil ich weiss das ich später wieder auf die vorherige version zurück kann. mein codefluss wird besser und ich werde schneller.
+
+> Now that you have your workspace set up, what do you want to try using Git for?
+auf lange sicht unity projekte versionieren
