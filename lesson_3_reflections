@@ -19,3 +19,14 @@ n fork is ein clon der nur auf GitHub erstellt wird und dessen quelle GitHub ist
 n clon is ne kopie eines repository entweder von GitHub auf dem eigenen system oder eine kopie eines repository VON dem eigenen system AUF das eigene system.
 ein branch ist eine verzweigung und kann auf dem GitHub oder auf dem eigenen system vorhanden sein.
 
+"git fetch origin"
+ermöglicht das laden eines GitHub Branches der eine änderung beinhaldet, die mit einer localen änderung interferieren würde. is wird ein paralleler branch erzeugt.
+
+followup command wäre
+"git merge master origin/master"
+
+>What is the benefit of having a copy of the last known state of the remote stored locally?
+wenn man offline is, kann man trotzdem mit den möglichen änderungen die online gemacht wurden arbeiten.
+
+>How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+vermutlich über dropbox. allerdings wäre deutlich mehr direkt kommunikation nötig oder jeder müsste an einem eigenen file im code arbeiten. der umgang mit verschachtelten problemen wäre deutlich komplizierter. das schnelle ändern wäre einfacher.
