@@ -10,3 +10,12 @@ GITHUB:
 
 > When would you want to use a remote repository rather than keeping all your work local?
 wenn ich mit einem team an einem projekt arbeite und es mir nicht wichtig ist das die daten geheim bleiben.
+
+>Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+wenn ich local arbeite und es auf github fremde änderungen gibt, möchte ich vielleicht trotzdem selbst entscheiden welche sachen ich auf meinem Rechner weiter bearbeite.
+
+>Describe the differences between forks, clones, and branches. When would you use one instead of another?
+n fork is ein clon der nur auf GitHub erstellt wird und dessen quelle GitHub ist.
+n clon is ne kopie eines repository entweder von GitHub auf dem eigenen system oder eine kopie eines repository VON dem eigenen system AUF das eigene system.
+ein branch ist eine verzweigung und kann auf dem GitHub oder auf dem eigenen system vorhanden sein.
+
