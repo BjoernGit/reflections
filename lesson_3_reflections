@@ -1,0 +1,9 @@
+GITHUB:
+
+"git remote" um die remote verbindungen mit github zu sehen
+
+"git remote <REMOTENAME> <REMOTEURL>" baut eine remoteverbindung auf.
+
+"git remote -v" v für verbose = wortreich/ausführlich bringt mehr informationen
+
+"git push origin master" schiebt das masterbranch in den origin remote pfad
