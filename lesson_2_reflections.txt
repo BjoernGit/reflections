@@ -1,0 +1,63 @@
+> What happens when you initialize a repository? Why do you need to do it?
+s erstellt n .git folder der wegen des . unsichtbar erkannt wird von windows. der .git folder dient dem speichern der commits. 
+
+"git init" kreiert einen neuen .git ordner
+
+"git add <NAME OF FILE>" lässt mich eine Datei in die sogenannte "staging area" hinzu fügen
+damit kann ich kontrollieren welche files ich tracken möchte.
+
+mit "git status" sehe ich, welche dateien momentan getrackt werden.
+
+> How is the staging area different from the working directory and the repository? What value do you think it offers?
+verstehe die frage ehrlich gesagt nicht. staging area is ein imaginärer bereich in den ich dateien verschiebe, um diese zu tracken. working directory is der pfad in dem ich arbeite. aus meiner sicht ist das repository das gleiche.
+EDIT: jetzt hab ichs begriffen --- repository is basically das .git directory und das workingdirectory ist der ort mit allen files inklusive dem .git!
+
+"git checkout master" läd den HEAD des branches in den speicher. somit kann ich auf dem aktuellsten status weiter arbeiten
+
+
+------------------ lines die zum korrigieren von asteroid bug nötig sind
+ if (KEY_STATUS.space) {
+       if (this.delayBeforeBullet <= 0) {
+-        this.delayBeforeBullet = 10;
+         for (var i = 0; i < this.bullets.length; i++) {
+           if (!this.bullets[i].visible) {
+             SFX.laser();
+-----------------------
+
+wenn man im master branch änderungen vor nimmt, bedeutet das KEINE änderung in der staging area. also kann noch nichts committed werden. man muss immer erst ein "git add <FILE>" durchführen.
+
+wenn man "git diff" ohne argument ausführt, wird das working directory und die staging area verglichen. dann sieht man die änderungen, die im working directory gemacht wurden und neu sind und noch nicht in der staging area gelandet sind.
+
+"git diff --staged" haut den vergleich zwischen dem stage directory und dem letzten commit raus.
+
+!!ACHTUNG!!"git reset --hard" resetted die changes in dem working directory und der staging area.!!ACHTUNG!!
+
+How can you use the staging area to make sure you have one commit per logical change?
+> mit git diff --staged kann geprüft werden, was zum change gehört der mommitted werden soll
+somit hat man unter kontrolle, welche teile committed werden sollen und kann überprüfen, ob es sich um einen logischen change handelt.
+
+"git branch" zeigt die verzweigungen an die das momentane projekt hat.momentan bin ich mir noch nicht ganz klar wiviel man sieht.
+
+"git branch <ARGUMENT> erstellt ein branch aus dem momentanen punkt (checkput version) mit dem namen ARGUMENT"
+mit "git checkout <BRANCH NAME>" kann zu einem branch gewechselt werden
+
+>What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+neues feature adden und ausjprobieren oder allgemein n major change vornehmen ohne den master zu stark zu verändern. beispiel neue sprache.
+Der typ aus dem interview switched branches für jedes mal das er was neues ausprobiert. die idee ist, das der master brach immer funktioniert und die branches nicht unbedingt funktional sind. branches dienen auch der übersicht wenn mehrere leute an einem Projekt arbeiten. auch bug fixing ist ein branch. besonders wenn bugs gefunden werden, müssen diese nicht im momentanen branch gemacht werden, sondern bekommen ihren eigenen branch. später wederen diese changes (brachnes) einander übergeben. 
+
+git log --graph (--decorate) --oneline // das in klammern is optional und ich hab kein dunst was es tut
+stellt die branches halbwegs grafisch dar.
+
+>How do the diagrams help you visualize the branch structure?
+es gibt einem ne hilfe wo man sich in den branches befindet. allerdings zeigt es so weit ich das beurteilen kann nur den verlaub bis zu den parents an. nicht die andern branches aufwärts.... vielleicht irre ich mich auch und ich lerne noch was
+
+wenn man branches zusammenführt, dann wird ein grosser branch draus. die einzelnen commits werden gemäss der timestamps hintereinander gereiht. das bdeutet für mich das die changes zwischen den commits angepasst werden müssten. geiler shice! ;)
+
+>What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+merging von branches war n riesen shice. wenn man git branch coins eingibt dann wird das label neu gesetzt auf den momentanen master. somit wird das bisher unbekannte branch zwar nicht gelöscht aber unauffindbar. ich habe es doch gefunden durch neu clonen des asteroids games in einen neuen pfad.
+DENNOCH: branches sind ein geiler und wertvoller win in der welt der versionierung
+
+>What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+wenn klar voneinander trennbare bereiche zusammengeführt werden müssen, dann bekommt git das alleine hin.
+wenn mehrere leute im gleichen code dinge ändern mussten, so lässt sich eine manuelle veränderung nicht verhindern.
+
